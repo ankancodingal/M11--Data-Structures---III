@@ -1,0 +1,60 @@
+# Power of 2
+def power2(number):
+  if number <= 0:
+      return False
+  return (number & (number - 1)) == 0
+
+n = int(input("Enter a number: "))
+if power2(n):
+    print("\nThe number is a power of 2")
+else:
+    print("\nThe number is not a power of 2")
+# ---------------------------------------
+# Power of 4
+
+# ----------------------------------------
+# Log(n) Power
+  def computePower(x, y):  
+  result = 1
+  while y>0:
+      if(y%2==0): 
+          x=x*x
+          y>>=1
+      else:
+          result = result * x
+          y = y - 1
+   return result
+x = int(input("Enter x for x^y : "))
+y = int(input("Enter y for x^y : "))
+print("Total : ",(computePower(x, y)))
+# ------------------------------------------
+# Power Of 8
+# Program to check if a number is power of 8
+def powerOf8(number):
+	
+	# Variable i will denote the bit
+	# that we are currently at
+	bitPosition = 0
+	mask = 1
+	
+	while (bitPosition <= 63):
+		mask <<= bitPosition
+
+		# If only set bit in n
+		# is at position i
+		if (mask == number):
+			return True
+
+		# Get to next valid bit position
+		bitPosition += 3
+		mask = 1
+
+	return False
+
+number = int(input("Enter your number : "))
+if (powerOf8(number)):
+	print("Yes ",number,"is power of 8")
+else:
+	print("No ",number,"is not power of 8")
+
+
